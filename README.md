@@ -21,5 +21,5 @@ This project,using regex for java with Spring Boot
 this groups the results 
 
 ---
-[Muharrem Koç}(https://github.com/muharremkoc/
-[MIT](https://choosealicense.com/licenses/mit/)
+[Muharrem Koç](https://github.com/muharremkoc/
+
