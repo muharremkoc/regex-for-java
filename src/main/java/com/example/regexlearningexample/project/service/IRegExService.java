@@ -11,4 +11,6 @@ public interface IRegExService {
     String getFirstB(String text);
 
     String getLastK(String text);
+
+    String getDate(String text);
 }

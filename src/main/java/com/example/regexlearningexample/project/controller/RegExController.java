@@ -33,4 +33,9 @@ public class RegExController {
     public String getLastK(@RequestParam String text){
         return iRegExService.getLastK(text);
     }
+
+    @PostMapping(value = "/getDate")
+    public String getDate(@RequestParam String text){
+        return iRegExService.getDate(text);
+    }
 }

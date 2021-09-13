@@ -96,4 +96,23 @@ while (matcher.find()){
         }
         return foundedText;
     }
+
+    @Override
+    public String getDate(String text) {
+        String foundedText = "";
+        Pattern pattern = Pattern.compile("[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]");
+        Matcher matcher = pattern.matcher(text);
+        boolean found=false;
+
+        while (matcher.find()){
+            foundedText+=matcher.group()+" ";
+
+            found=true;
+        }
+        System.out.println(foundedText+"");
+        if (!found) {
+            return "No match found.";
+        }
+        return foundedText;
+    }
 }
