@@ -10,7 +10,6 @@ public class RegExServiceImpl implements IRegExService {
     @Override
     public String getFaturaId(String text) {
 
-
         String foundedText = "";
 
         while (true) {
@@ -41,7 +40,7 @@ public class RegExServiceImpl implements IRegExService {
             while (true) {
 
                 //Pattern pattern = Pattern.compile("([A-Za-z]) (:GIB[0-9]{13})");
-                Pattern pattern = Pattern.compile("(?<=V[KL]N:)[0-9]{10}");
+                Pattern pattern = Pattern.compile("(?<=V[KL]N: )[0-9]{10}");
                 Matcher matcher = pattern.matcher(text);
                 boolean found = false;
                 while (matcher.find()) {
@@ -100,7 +99,7 @@ while (matcher.find()){
     @Override
     public String getDate(String text) {
         String foundedText = "";
-        Pattern pattern = Pattern.compile("[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]");
+        Pattern pattern = Pattern.compile("(0[1-9]|[1-2][0-9]|3[0-1]-(0[1-9]|1[0-2])-[0-9]{4}) (2[0-3]|[01][0-9]):[0-5][0-9]");
         Matcher matcher = pattern.matcher(text);
         boolean found=false;
 
