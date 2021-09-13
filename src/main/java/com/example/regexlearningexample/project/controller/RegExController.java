@@ -21,7 +21,7 @@ public class RegExController {
     }
     @PostMapping(value = "/VKN")
     public String getVKN(@RequestParam String text){
-        return iRegExService.getVKN( text);
+        return iRegExService.getVKN(text);
     }
     @PostMapping(value = "/getFirstB")
     public String getFirstB(@RequestParam String text){

@@ -10,7 +10,7 @@ public class RegexCommands {
     public static void main(String[] args) {
 
 
-        Scanner keyboard=new Scanner(System.in);
+       /*
         while (true) {
             System.out.println("Enter regex pattern:");
             Pattern pattern = Pattern.compile(keyboard.nextLine());
@@ -26,11 +26,37 @@ public class RegexCommands {
             }
         }
 
+        */
+        String text;
 
+        text="SIRA NO\tMAL HİZMET\tMİKTAR";
+       getVKN(text);
 
 
 
     }
+    public static String getVKN(String text) {
+
+        String foundedText = "";
+        while (true) {
+
+            //Pattern pattern = Pattern.compile("([A-Za-z]) (:GIB[0-9]{13})");
+            Pattern pattern = Pattern.compile("\\bMAL\\b");
+            Matcher matcher = pattern.matcher(text);
+            boolean found = false;
+            while (matcher.find()) {
+                foundedText += matcher.group() + " ";
+
+                found = true;
+            }
+            System.out.println(foundedText + "");
+            if (!found) {
+                return "No match found.";
+            }
+            return foundedText;
+        }
+    }
+
 
 
 
